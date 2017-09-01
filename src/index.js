@@ -51,12 +51,16 @@ class HookedRoute extends React.Component {
   }
 
   componentWillReceiveProps(nextProps){
-    let { onChange, computedMatch } = this.props;
+    let { onLeave, onChange, computedMatch, location } = this.props;
     if (
       onChange &&
       nextProps.computedMatch &&
       computedMatch &&
-      JSON.stringify(nextProps.computedMatch.params) !== JSON.stringify(computedMatch.params)
+      nextProps.computedMatch.path === computedMatch.path &&
+      (
+        nextProps.location.search !== location.search ||
+        JSON.stringify(nextProps.computedMatch.params) !== JSON.stringify (computedMatch.params)
+      )
     ){
       if (onChange.length > 3) {
         this.runAsync(onChange(this.props, nextProps, this.replace, this.callback))
@@ -64,13 +68,15 @@ class HookedRoute extends React.Component {
         onChange(this.props, nextProps, this.replace);
       }
     }
+    if (
+      onLeave &&
+      nextProps.computedMatch &&
+      computedMatch &&
+      nextProps.computedMatch.path !== computedMatch.path
+    ){
+      onLeave(this.props);
+    }
   }
-
-  componentWillUnmount(){
-    let { onLeave } = this.props;
-    if (onLeave) onLeave(this.props);
-  }
-
 
   render(){
     if (this.state.pending) return null

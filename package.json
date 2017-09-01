@@ -1,6 +1,6 @@
 {
   "name": "react-router-hooks",
-  "version": "0.0.5",
+  "version": "0.9.5",
   "description": "Route wrapper that enables onEnter, onChange, and onLeave hooks",
   "main": "lib/",
   "keywords": [
@@ -21,7 +21,7 @@
     "url": "https://github.com/sammorrow/react-router-hooks.git"
   },
   "scripts": {
-    "compile": "babel lib/ src/",
+    "compile": "babel --presets es2017,react,es2015,stage-0 -d lib/ src/",
     "prepublish": "npm run compile"
   },
   "license": "ISC",

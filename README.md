@@ -1,6 +1,6 @@
 # react-router-hooks
 
-This package generates a higher-order component to wrap react-router's route components in. Simply use its exported component instead of a route.
+This package wraps react-router-v4's Route component in a higher-order component to enable the passing of lifecycle hooks as props. To use, use the exported HOC instead of a normal Route.
 
 The HOC interacts with the following functions:
 
@@ -13,7 +13,9 @@ The HOC interacts with the following functions:
 The *replace* parameter is always passed a function that redirects the user (using browserHistory's history.push) to whatever route it is supplied.
 If supplied a *callback* parameter, the hook will run asynchronously and not render the route until the callback is called.
 
-Example routes file:
+* * *
+## Example *routes* file:
+
 ````
 import React from 'react';
 import ReactDOM from 'react-dom';
