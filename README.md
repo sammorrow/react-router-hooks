@@ -10,16 +10,16 @@ The HOC interacts with the following functions:
 
 **onLeave (prevProps)**
 
-The replace function will redirect the user (using history.push) to whatever route it is supplied.
-If supplied a callback parameter, the hook will run asynchronously and not render the route until the callback function is executed.
+The *replace* parameter is always passed a function that redirects the user (using browserHistory's history.push) to whatever route it is supplied.
+If supplied a *callback* parameter, the hook will run asynchronously and not render the route until the callback is called.
 
-Example routes file: 
+Example routes file:
 ````
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Switch } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
-import { Route } from 'react-router-hooks';
+import Route from 'react-router-hooks';
 
 const App = () => (
   <div>
