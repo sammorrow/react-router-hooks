@@ -25,7 +25,7 @@ class HookedRoute extends React.Component {
   }
 
   callback(){
-    if (!this.state.pending) this.setState({pending: false})
+    if (this.state.pending) this.setState({pending: false})
   }
 
   runAsync(hookFunc){
