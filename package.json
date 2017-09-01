@@ -1,0 +1,21 @@
+{
+  "name": "react-router-hooks",
+  "version": "0.0.1",
+  "description": "Route wrapper that enables onEnter, onChange, and onLeave hooks",
+  "main": "index.js",
+  "keywords": ["react", "router", "hooks", "lifecycle", "onEnter", "onChange", "onLeave"],
+  "author": {
+    "name": "Sam Morrow",
+    "email": "smoresdev@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sammorrow/react-router-hooks.git"
+  },
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "^15.6.1",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2"
+  }
+}
