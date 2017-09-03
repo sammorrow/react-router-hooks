@@ -43,7 +43,7 @@ class HookedRoute extends React.Component {
     let { onEnter } = this.props;
     if (onEnter) {
       if (onEnter.length > 2) {
-        this.runAsync(onEnter(this.props, this.replace, this.callback))
+        this.runAsync(() => onEnter(this.props, this.replace, this.callback))
       } else {
         onEnter(this.props, this.replace)
       }
@@ -63,7 +63,7 @@ class HookedRoute extends React.Component {
       )
     ){
       if (onChange.length > 3) {
-        this.runAsync(onChange(this.props, nextProps, this.replace, this.callback))
+        this.runAsync(() => onChange(this.props, nextProps, this.replace, this.callback))
       } else {
         onChange(this.props, nextProps, this.replace);
       }

@@ -1,6 +1,6 @@
 # react-router-hooks
 
-This package wraps react-router-v4's Route component in a higher-order component to enable the passing of lifecycle hooks as props. To use, use the exported HOC instead of a normal Route.
+This package wraps react-router-v4's Route component in a higher-order component to enable the passing of lifecycle hooks as props. To use, import the exported HOC instead of a normal Route.
 
 The HOC interacts with the following functions:
 
