@@ -1,3 +1,7 @@
+### Any feedback appreciated! Please submit any issues you encounter or send me an email.
+
+* * *
+
 # react-router-hooks
 
 This package wraps react-router-v4's Route component in a higher-order component to enable the passing of lifecycle hooks as props. To use, import the exported HOC instead of a normal Route.
@@ -11,7 +15,7 @@ The HOC interacts with the following functions:
 **onLeave (prevProps)**
 
 The *replace* parameter is always passed a function that redirects the user (using browserHistory's history.push) to whatever route it is supplied.
-If supplied a *callback* parameter, the hook will run asynchronously and not render the route until the callback is called.
+If supplied a *callback* parameter, the hook will run asynchronously and not render the route until the callback is called or until the hook completes its execution.
 
 * * *
 ## Example *routes* file:

@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
+import Bluebird from 'bluebird';
 class HookedRoute extends React.Component {
   constructor(props){
     super(props);
@@ -29,10 +29,12 @@ class HookedRoute extends React.Component {
   }
 
   runAsync(hookFunc){
-    setTimeout(() => {
-      hookFunc();
-      this.callback();
-    }, 0);
+
+    var hookFuncAsync = Bluebird.promisify(hookFunc);
+
+    hookFuncAsync()
+      .then(this.callback)
+      .catch(console.error)
   }
 
   componentWillMount(){

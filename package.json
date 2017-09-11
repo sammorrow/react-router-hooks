@@ -1,9 +1,10 @@
 {
   "name": "react-router-hooks",
-  "version": "0.9.6",
+  "version": "0.9.7",
   "description": "Route wrapper that enables onEnter, onChange, and onLeave hooks",
   "main": "lib/",
   "keywords": [
+    "frontend",
     "react",
     "router",
     "hooks",
@@ -25,6 +26,9 @@
     "prepublish": "npm run compile"
   },
   "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.0"
+  },
   "peerDependencies": {
     "react": "^15.1.0",
     "react-router": "^4.1.0",
